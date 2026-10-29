@@ -75,7 +75,7 @@ In-place system upgrades are supported for specific versions of Azure Windows VM
 
 ### Azure Virtual Desktop in-place upgrade support matrix
 
-The following table shows in-place upgrade supportability for Azure Virtual Desktop session hosts and standard Azure VMs. **All upgrade methods** (ISO, Settings app, WSUS) follow the same supportability.
+The following table shows in-place upgrade supportability for Azure Virtual Desktop session hosts and standard Azure VMs.
 
 **Summary:** Feature updates within the same Windows version are supported. OS version upgrades (Windows 10 to Windows 11) aren't supported on any session host type or standard Azure VM — deploy new VMs instead.
 
@@ -90,6 +90,8 @@ The following table shows in-place upgrade supportability for Azure Virtual Desk
 
 > [!NOTE]
 > - For WSUS-distributed feature updates, ensure the correct feature updates are published to WSUS and the target VMs meet the OS hardware requirements described in the preceding callout.
+> - **Azure Virtual Desktop multi-session:** Microsoft doesn't provide an ISO for Windows multi-session, so an ISO-based in-place upgrade (`setup.exe`) isn't supported.
+> - **Azure Virtual Desktop recommendation:** Continuing to use an existing environment after an OS feature update carries a risk of unexpected problems in the future, so Microsoft recommends that you deploy a new environment. If problems occur because you continue to use an existing environment, Microsoft might again advise you to deploy a new environment.
 > - **Windows 10 to Windows 11:** Not supported for any session host type or standard Azure VM as an in-place upgrade. Deploy new VMs with the target Windows version instead.
 > - **Windows 11 feature updates (for example, 24H2 to 25H2):** Supported for single-session (personal) hosts, multi-session (pooled) hosts, and standard Azure VMs, provided the VM meets Windows 11 hardware requirements.
 
